@@ -1,0 +1,40 @@
+ <div class="panel panel-default" >
+  <div class="panel-heading">Student detail Form : You can see the detail information of an student in this page .</div>
+  <div class="panel-body">
+    <form class="form-horizontal" *ngIf=student>
+  <div class="form-group">
+    <label for="emp_name" class="col-sm-2 control-label">Student's Full Name : </label>
+    <div class="col-sm-9">
+      <p class="form-control">{{student.name}}</p> 
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="position" class="col-sm-2 control-label">Age : </label>
+    <div class="col-sm-9">
+     <p class="form-control">{{student.age}}</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="department" class="col-sm-2 control-label">Gender : </label>
+    <div class="col-sm-9">
+     <p class="form-control">{{student.gender}}</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="qualification" class="col-sm-2 control-label">Qualification : </label>
+    <div class="col-sm-9">
+      <p class="form-control">{{student.qualification}}</p>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="id" class="col-sm-2 control-label">Status : </label>
+    <div class="col-sm-9">
+      <p class="form-control">{{student.status}}</p>
+    </div>
+
+    <div class="form-group">
+    <label for="id" class="col-sm-2 control-label">Course : </label>
+    <div class="col-sm-9">
+      <p class="form-control">{{student.course}}</p>
+    </div>

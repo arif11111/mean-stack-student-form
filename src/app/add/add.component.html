@@ -1,0 +1,128 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Student Entry Form : You can add an employee's detail information into this EMS Apps.</div>
+  <div class="panel-body">
+  <form name="myForm" #myForm="ngForm" class="form-horizontal" class="needs-validation" novalidate (submit)="addStudent()">
+
+
+  <div class="form-group">
+    <label for="emp_name" class="col-sm-2 control-label">Student's Full Name : </label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" [(ngModel)]="model.name" name="name1" #name1="ngModel" required>
+      <div *ngIf = "name1.errors && name1.touched">
+        <span [hidden]="!name1.errors.required"> Name is Required. </span>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label for="age" class="col-sm-2 control-label">age : </label>
+    <div class="col-sm-9">
+       <select [(ngModel)] = "model.age" name="age" #age="ngModel" required>
+       
+    <option value="20">20</option>
+    <option value="21" >21</option>
+    <option value="22">22</option>
+    <option value="23">23</option>
+    <option value="24">24</option>
+    <option value="25">25</option>
+   <option value="26">26</option>
+    <option value="27">27</option>
+  </select>
+
+  <div *ngIf = "age.errors && age.touched">
+        <span [hidden]="!age.errors.required"> age is Required. </span>
+      </div>
+
+    </div>
+  </div>
+   
+       
+       <div class="form-group">
+   <label for="gender" class="col-sm-2 control-label">gender  : </label>
+    <div class="col-sm-9">
+    <label *ngFor="let item of radioItems">
+      <input type="radio" name="gender" (click)="model.gender= item" 
+       [checked]="item === model.gender">
+      {{item}} <br/>
+    </label>
+      
+</div>
+</div>
+
+
+  <div class="form-group">
+    <label for="qualificaiton" class="col-sm-2 control-label">qualificaiton : </label>
+    <div class="col-sm-9">
+
+      <select [(ngModel)] = "model.qualification" name="qualification" #qualification="ngModel" required>
+       
+    <option value="B.Tech">B.Tech</option>
+    <option value="M.Tech" >M.Tech</option>
+    <option value="MCA"> MCA </option>
+    <option value="Others">Others</option>
+    
+  </select>
+ <div *ngIf = "qualification.errors && qualification.touched">
+        <span [hidden]="!qualification.errors.required"> qualification is Required. </span>
+      </div> 
+</div>
+</div>
+
+
+      
+
+  <div class="form-group">
+    <label for="status" class="col-sm-2 control-label">status : </label>
+    <div class="col-sm-9">
+     
+      <select [(ngModel)] = "model.status" name="status" #status="ngModel" required>
+       
+    <option value="Studying">Studying</option>
+    <option value="Looking for Job" >Looking for Job</option>
+    <option value="Working"> Working </option>
+    
+    </select>
+      
+       <div *ngIf = "status.errors && status.touched">
+        <span [hidden]="!status.errors.required"> status is Required. </span>
+      </div> 
+   </div>
+</div>
+
+
+  <div class="form-group">
+    <label for="course" class="col-sm-2 control-label">course : </label>
+    <div class="col-sm-9">
+      <select [(ngModel)] = "model.course" name="course" #course="ngModel" required>
+       
+    <option value="Java">Java</option>
+    <option value="Python">Python</option>
+        <option value="AngularJs">AngularJS</option>
+    <option value="Advanced Java">Advanced Java</option>
+        <option value="Android">Android</option>
+    <option value="Big data">Big data</option>
+
+  </select>
+
+   
+
+    <div *ngIf = "course.errors && course.touched">
+        <span [hidden]="!course.errors.required"> course is Required. </span>
+      </div>
+
+    </div>
+  </div>
+  
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-8">
+      <button type="submit" class="btn btn-success" [disabled]="!myForm.form.valid">Save</button>
+       <a class="btn btn-info" (click)="goBack()">Cancel</a>
+    </div>
+   
+  </div>
+</form>
+
+  </div>
+</div>
