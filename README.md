@@ -1,1 +1,1 @@
-# mean-stack-student-form
+#school-registration-form
